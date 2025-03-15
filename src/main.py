@@ -54,9 +54,9 @@ async def handle_webhook(request: Request, background_tasks: BackgroundTasks):
     except json.JSONDecodeError:
         raise HTTPException(status_code=400, detail="Payload inválido")
 
-    # Verificar se é push na main
-    if payload.get("ref") != "refs/heads/main":
-        return {"status": "ignorado - não é main"}
+    # Verificar se é push na master
+    if payload.get("ref") != "refs/heads/master":
+        return {"status": "ignorado - não é master"}
 
     # Obter nome do repositório
     repo_name = payload["repository"]["name"]
