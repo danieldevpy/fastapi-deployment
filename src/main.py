@@ -29,7 +29,7 @@ async def run_deployment_script(repo_name: str):
 
     try:
         process = subprocess.run(
-            ["bash", "-c", script_path],
+            ["/bin/bash", script_path],
             cwd=project_path,
             capture_output=True,
             text=True,
