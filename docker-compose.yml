@@ -1,0 +1,8 @@
+
+services:
+  fastapi-deployment:
+    build: .
+    container_name: fastpi-deployment
+    ports:
+      - "8005:8005"
+    
