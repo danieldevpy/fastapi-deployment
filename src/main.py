@@ -43,6 +43,7 @@ async def run_deployment_script(repo_name: str):
 async def handle_webhook(request: Request, background_tasks: BackgroundTasks):
     # Verificação de segurança
     body_bytes = await request.body()
+    print(body_bytes)
     signature = request.headers.get("X-Hub-Signature-256", "")
     
     if not verify_signature(body_bytes, signature):
