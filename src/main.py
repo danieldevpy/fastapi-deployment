@@ -21,8 +21,9 @@ def verify_signature(body: bytes, signature: str):
 
 async def run_deployment_script(repo_name: str):
     project_path = os.path.join(APPS_DIR, repo_name)
-    script_path = './deployment'
+    script_path = os.path.join(project_path, "deployment.sh")
     
+    logger.info("debbug", project_path, "|", script_path)
     if not os.path.exists(script_path):
         logger.error(f"Script não encontrado: {script_path}")
         return
