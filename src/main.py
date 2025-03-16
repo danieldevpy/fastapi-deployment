@@ -7,8 +7,6 @@ import os
 import logging
 import json
 
-load_dotenv(override=True)
-
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
