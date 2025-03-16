@@ -1,10 +1,13 @@
 from fastapi import FastAPI, Request, HTTPException, BackgroundTasks
+from dotenv import load_dotenv
 import hmac
 import hashlib
 import subprocess
 import os
 import logging
 import json
+
+load_dotenv(override=True)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
